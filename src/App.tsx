@@ -358,7 +358,7 @@ export default function App() {
       {!isAuth(tab) && (
         <>
           <Sidebar active={tab} onNavigate={navigate} />
-          <UserCard />
+          <UserCard onOpen={() => navigate('settings')} />
         </>
       )}
     </ScaleContext.Provider>

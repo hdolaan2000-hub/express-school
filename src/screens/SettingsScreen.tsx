@@ -87,7 +87,7 @@ export function SettingsScreen({ onNavigate }: { onNavigate?: (tab: Tab) => void
               <div className={styles.avatarLeft}>
                 <img className={styles.avatar} src="assets/avatar.png" alt="" />
                 <div className={styles.userMeta}>
-                  <span className={styles.userName}>Ваня Иванов</span>
+                  <span className={styles.userName}>Мага</span>
                   <span className={styles.userSub}>Ученик · Уровень 4</span>
                 </div>
               </div>
@@ -105,7 +105,7 @@ export function SettingsScreen({ onNavigate }: { onNavigate?: (tab: Tab) => void
             <div className={styles.field}>
               <span className={styles.fieldLabel}>Отображаемое имя</span>
               <div className={styles.input}>
-                <span>Ваня Иванов</span>
+                <span>Мага</span>
                 <img src="assets/icon-pencil.svg" alt="" width={16} height={16} />
               </div>
             </div>
@@ -123,7 +123,7 @@ export function SettingsScreen({ onNavigate }: { onNavigate?: (tab: Tab) => void
             <div className={styles.field}>
               <span className={styles.fieldLabel}>Твой код для друзей</span>
               <div className={styles.codeField}>
-                <span>VANYA-2847</span>
+                <span>MAGA-2847</span>
                 <img src="assets/icon-copy.svg" alt="Скопировать" width={20} height={20} />
               </div>
             </div>

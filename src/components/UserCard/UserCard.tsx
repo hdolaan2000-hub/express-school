@@ -2,8 +2,9 @@ import styles from './UserCard.module.css'
 import { useScale } from '../../ScaleContext'
 
 /** Карточка пользователя. Живёт вне масштабируемой сцены и крепится к нижнему
- *  левому углу окна — поэтому видна при любом скролле. Масштабируется сама. */
-export function UserCard() {
+ *  левому углу окна — поэтому видна при любом скролле. Масштабируется сама.
+ *  По клику открывает профиль (личный кабинет). */
+export function UserCard({ onOpen }: { onOpen?: () => void }) {
   const scale = useScale()
   return (
     <div
@@ -15,13 +16,13 @@ export function UserCard() {
         transformOrigin: 'bottom left',
       }}
     >
-      <div className={styles.card}>
+      <button type="button" className={styles.card} onClick={onOpen}>
         <div className={styles.avatar}>
           <img className={styles.avatarImg} src="assets/avatar.png" alt="" />
         </div>
         <span className={styles.name}>Мага</span>
         <span className={styles.role}>Ученик</span>
-      </div>
+      </button>
     </div>
   )
 }
