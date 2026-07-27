@@ -67,7 +67,7 @@ export function Sidebar({ active, onNavigate }: Props) {
       <div className={styles.logo}>
         <div className={styles.logoInner}>
           <img src="assets/logo.svg" alt="" width={23} height={25} />
-          <span className={styles.logoText}>Экспресс Школа</span>
+          <span className={styles.logoText}>Школа ЭП</span>
         </div>
       </div>
 

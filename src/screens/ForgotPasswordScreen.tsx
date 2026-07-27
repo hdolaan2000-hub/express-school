@@ -14,7 +14,7 @@ export function ForgotPasswordScreen({
       <div className={styles.left}>
         <div className={styles.logo}>
           <img src="assets/logo.svg" alt="" width={23} height={25} />
-          <span className={styles.logoText}>Экспресс Школа</span>
+          <span className={styles.logoText}>Школа ЭП</span>
         </div>
         <img className={styles.illustration} src="assets/login-illustration.png" alt="" />
       </div>

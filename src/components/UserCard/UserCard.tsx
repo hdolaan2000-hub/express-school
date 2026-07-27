@@ -19,7 +19,7 @@ export function UserCard() {
         <div className={styles.avatar}>
           <img className={styles.avatarImg} src="assets/avatar.png" alt="" />
         </div>
-        <span className={styles.name}>Ваня Иванов</span>
+        <span className={styles.name}>Мага</span>
         <span className={styles.role}>Ученик</span>
       </div>
     </div>

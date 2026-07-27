@@ -8,11 +8,11 @@ type Friend = {
 }
 
 const FRIENDS: Friend[] = [
-  { rank: '🥇', name: 'Миша', level: 'Уровень 7', highlighted: true },
-  { rank: '🥈', name: 'Катя', level: 'Уровень 6' },
-  { rank: '🥉', name: 'Артём', level: 'Уровень 5' },
-  { rank: '4.', name: 'Вова', level: 'Уровень 5' },
-  { rank: '5.', name: 'Лиза', level: 'Уровень 4' },
+  { rank: '🥇', name: 'Али', level: 'Уровень 7', highlighted: true },
+  { rank: '🥈', name: 'Фатима', level: 'Уровень 6' },
+  { rank: '🥉', name: 'Алина', level: 'Уровень 5' },
+  { rank: '4.', name: 'Патахъ', level: 'Уровень 5' },
+  { rank: '5.', name: 'Мага', level: 'Уровень 4' },
 ]
 
 export function FriendsCard({ onInvite }: { onInvite?: () => void }) {

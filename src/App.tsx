@@ -24,7 +24,7 @@ const SIDEBAR_WIDTH = 250
 /** Ширина блока контента — фиксированная во всех макетах */
 const CONTENT_WIDTH = 1158
 
-const GREETING_TITLE = '👋🏻  Привет, Ваня'
+const GREETING_TITLE = '👋🏻  Привет, Мага'
 
 type ScreenConfig = {
   height: number
@@ -69,7 +69,7 @@ const SCREENS: Record<Tab, ScreenConfig> = {
     title: GREETING_TITLE,
     subtitle: (
       <>
-        У тебя <strong className={styles.greetingAccent}>8 друзей</strong>!
+        У тебя <strong className={styles.greetingAccent}>5 друзей</strong>!
       </>
     ),
     render: () => <FriendsScreen />,
