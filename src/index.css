@@ -1,0 +1,91 @@
+/* Гарнитура макета — SF Pro Rounded. Подключаем системный файл macOS,
+   чтобы метрики и переносы строк совпадали с Figma во всех браузерах.
+   Для продакшена шрифт нужно взять из официального пакета Apple SF Pro
+   (developer.apple.com/fonts) и соблюсти его лицензию. */
+@font-face {
+  font-family: 'SF Pro Rounded Local';
+  src: url('/fonts/SFNSRounded.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Цвета из макета */
+  --color-brand: #ff742f;
+  --color-black: #222328;
+  --color-white: #ffffff;
+  --color-grey: #f5f5f5;
+  --color-muted: rgba(22, 13, 37, 0.52);
+  --color-ink: #101012;
+  --color-ink-60: rgba(16, 16, 18, 0.6);
+  --color-ink-50: rgba(16, 16, 18, 0.5);
+
+  --shadow-card: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+
+  /* В макете — SF Pro Rounded. На macOS он лежит в системе как скрытый
+     «.SF NS Rounded», его и берём первым: это ровно та же гарнитура, что в Figma.
+     Дальше — ui-rounded (Safari) и деградация на ближайшие гротески. */
+  --font-rounded: 'SF Pro Rounded Local', 'SF Pro Rounded', ui-rounded,
+    -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-white);
+  font-family: var(--font-rounded);
+  color: var(--color-black);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  /* Требование дизайнера: кнопки увеличиваются по наведению (scale) */
+  transition:
+    transform 0.14s ease,
+    filter 0.14s ease;
+  transform-origin: center;
+}
+
+button:hover {
+  transform: scale(1.04);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
+  }
+  button:hover,
+  button:active {
+    transform: none;
+  }
+}

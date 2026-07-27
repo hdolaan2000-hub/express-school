@@ -1,0 +1,456 @@
+.screen {
+  padding: 24px 0 40px;
+  background: var(--color-white);
+  min-height: 100%;
+}
+
+.wrapper {
+  max-width: 1110px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* --- Шапка --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleCol {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconBtn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  line-height: 0;
+}
+
+.iconBtn img {
+  position: absolute;
+  top: -1px;
+  left: -2px;
+}
+
+/* --- Секции --- */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 36px;
+  background: var(--color-white);
+  box-shadow: inset 0 0 0 2px var(--color-grey), var(--shadow-card);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  margin: 0;
+  border: none;
+  border-top: 1px solid var(--color-grey);
+}
+
+/* --- Профиль --- */
+.avatarRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatarLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 999px;
+  object-fit: cover;
+  background: var(--color-grey);
+}
+
+.userMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.userName {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.userSub {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.avatarBtn {
+  padding: 8px 12px;
+  border-radius: 32px;
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f7f7 100%);
+  box-shadow:
+    0 1px 2px 0 rgba(40, 40, 40, 0.08),
+    0 0 0 1px rgba(236, 236, 236, 1),
+    inset 0 0 2px 0 rgba(255, 255, 255, 1);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 32px;
+  background: var(--color-grey);
+  font-size: 18px;
+  font-weight: 400;
+  color: #222328;
+}
+
+.input img {
+  opacity: 0.4;
+}
+
+.rowLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.rowValue {
+  font-size: 18px;
+  font-weight: 400;
+  color: #222328;
+}
+
+.rowValueStrong {
+  font-weight: 600;
+}
+
+.codeField {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--color-grey);
+  font-size: 20px;
+  font-weight: 600;
+  color: #222328;
+}
+
+/* --- Тумблер --- */
+.toggle {
+  display: flex;
+  align-items: center;
+  width: 51px;
+  height: 31px;
+  padding: 2px;
+  border-radius: 999px;
+  background: var(--color-grey);
+  transition: background 0.18s ease;
+}
+
+.toggleOn {
+  justify-content: flex-end;
+  background: #ff742f;
+}
+
+.knob {
+  width: 27px;
+  height: 27px;
+  border-radius: 999px;
+  background: var(--color-white);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.settingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settingText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.settingTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #222328;
+}
+
+.settingSub {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+/* --- Аккаунт --- */
+.accountRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.accountLabel {
+  font-size: 18px;
+  font-weight: 500;
+  color: #222328;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+}
+
+.logoutText {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff3b30;
+}
+
+/* --- Модалка выбора аватара --- */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 345px;
+  padding: 16px;
+  border-radius: 36px;
+  background: var(--color-white);
+  box-shadow: inset 0 0 0 2px var(--color-grey), var(--shadow-card);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #101012;
+}
+
+.modalClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f7f7 100%);
+  box-shadow:
+    0 1px 2px 0 rgba(40, 40, 40, 0.08),
+    0 0 0 1px rgba(236, 236, 236, 1),
+    inset 0 0 2px 0 rgba(255, 255, 255, 1);
+}
+
+.modalClose img {
+  opacity: 0.6;
+}
+
+.avatarGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modalAvatarRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatarOption {
+  flex: 1;
+  aspect-ratio: 1;
+  padding: 0;
+  border-radius: 999px;
+  background-size: cover;
+  background-position: center;
+}
+
+.avatarSelected {
+  box-shadow: 0 0 0 2px #ff742f;
+}
+
+.saveBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #ffa679;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffa071 0%, #ff742f 100%);
+  box-shadow: 0 4px 12px 0 rgba(47, 16, 1, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+/* --- Диалог выхода из аккаунта --- */
+.dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 369px;
+  padding: 16px;
+  border-radius: 36px;
+  background: var(--color-white);
+  box-shadow: inset 0 0 0 2px var(--color-grey), var(--shadow-card);
+}
+
+.dialogText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.dialogTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #101012;
+}
+
+.dialogSub {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.dialogButtons {
+  display: flex;
+  align-self: stretch;
+  gap: 12px;
+}
+
+.dialogStay {
+  flex: 1;
+  height: 48px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f7f7 100%);
+  box-shadow:
+    0 1px 2px 0 rgba(40, 40, 40, 0.08),
+    0 0 0 1px rgba(236, 236, 236, 1),
+    inset 0 0 2px 0 rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: rgba(16, 16, 18, 0.6);
+}
+
+.dialogLeave {
+  flex: 1;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #ffaeae;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffb5b5 0%, #ff5959 100%);
+  box-shadow: 0 4px 12px 0 rgba(47, 16, 1, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}

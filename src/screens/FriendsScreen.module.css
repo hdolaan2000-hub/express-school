@@ -1,0 +1,410 @@
+/* --- Заголовок секции --- */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #101012;
+}
+
+.countBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--color-grey);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(16, 16, 18, 0.6);
+}
+
+.inviteBtn {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #ffa679;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffa071 0%, #ff742f 100%);
+  box-shadow: 0 4px 12px 0 rgba(47, 16, 1, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+/* --- Подиум топ-3 --- */
+.podium {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 36px;
+  background: var(--color-white);
+  box-shadow: inset 0 0 0 2px var(--color-grey), var(--shadow-card);
+}
+
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Боковые места опущены на 20px относительно центрального */
+.colSide {
+  padding-top: 20px;
+}
+
+/* Кольцо-аватар: градиентная рамка через фон-подложку */
+.ring {
+  border-radius: 999px;
+  background: var(--ring);
+}
+
+.ring img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  object-fit: cover;
+  background: var(--color-grey);
+}
+
+.ringFirst {
+  width: 80px;
+  height: 80px;
+  padding: 3px;
+  --ring: linear-gradient(180deg, #ffe0ac 0%, #ffa100 100%);
+}
+
+.ringSecond {
+  width: 64px;
+  height: 64px;
+  padding: 2px;
+  --ring: linear-gradient(180deg, #e7e7e7 0%, #c0c0c0 100%);
+}
+
+.ringThird {
+  width: 64px;
+  height: 64px;
+  padding: 2px;
+  --ring: linear-gradient(180deg, #ffdebd 0%, #cd7f32 100%);
+}
+
+.nameCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.podiumName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #101012;
+}
+
+.podiumNameFirst {
+  font-size: 18px;
+}
+
+.podiumLevel {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.podiumXp {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff742f;
+}
+
+.podiumXpFirst {
+  font-size: 18px;
+}
+
+/* --- Список друзей --- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 20px;
+  border-radius: 36px;
+  background: var(--color-white);
+  box-shadow: inset 0 0 0 2px var(--color-grey), var(--shadow-card);
+}
+
+.rowLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rank {
+  width: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(16, 16, 18, 0.6);
+}
+
+.rankSelf {
+  color: #ff742f;
+}
+
+.rowAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  object-fit: cover;
+  background: var(--color-grey);
+}
+
+.rowName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #101012;
+}
+
+.selfTag {
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: #ff742f;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.rowLevel {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+/* --- Модалка приглашения --- */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 345px;
+  padding: 16px;
+  border-radius: 36px;
+  background: var(--color-white);
+  box-shadow: inset 0 0 0 2px var(--color-grey), var(--shadow-card);
+}
+
+.modalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #101012;
+}
+
+.modalClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f7f7 100%);
+  box-shadow:
+    0 1px 2px 0 rgba(40, 40, 40, 0.08),
+    0 0 0 1px rgba(236, 236, 236, 1),
+    inset 0 0 2px 0 rgba(255, 255, 255, 1);
+}
+
+.modalClose img {
+  opacity: 0.6;
+}
+
+.modalLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.codeField {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--color-grey);
+}
+
+.codeText {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222328;
+}
+
+.copyLink {
+  padding-top: 4px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ff742f;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 0;
+  border-top: 1px solid var(--color-grey);
+}
+
+.dividerText {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputLabelGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputField {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 16px;
+  border: 2px solid #d9d9d9;
+  border-radius: 999px;
+  background: var(--color-white);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #ffa679;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffa071 0%, #ff742f 100%);
+  box-shadow: 0 4px 12px 0 rgba(47, 16, 1, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+/* --- Пустое состояние (нет друзей) --- */
+.empty {
+  height: 761px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 80px;
+}
+
+.emptyCircle {
+  width: 112px;
+  height: 112px;
+  border-radius: 100px;
+  background: var(--color-grey);
+}
+
+.emptyText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.emptyTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #101012;
+}
+
+.emptySubtitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.emptyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 304px;
+  height: 48px;
+  padding: 0 12px;
+  border: 1px solid #ffa679;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffa071 0%, #ff742f 100%);
+  box-shadow: 0 4px 12px 0 rgba(47, 16, 1, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}

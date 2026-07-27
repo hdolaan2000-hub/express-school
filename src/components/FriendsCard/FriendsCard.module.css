@@ -1,0 +1,101 @@
+.card {
+  position: relative;
+  flex: 0 0 376px;
+  height: 696px;
+  border-radius: 36px;
+  background: var(--color-white);
+  box-shadow: inset 0 0 0 2px var(--color-grey), var(--shadow-card);
+}
+
+.title {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33px;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+.list {
+  position: absolute;
+  left: 20px;
+  top: 65px;
+  width: 336px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 12px;
+  border-radius: 20px;
+}
+
+.rowFirst {
+  height: 50px;
+  background: var(--color-grey);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+}
+
+.rank {
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.rankNumber {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15.6px;
+  color: var(--color-ink-50);
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-ink);
+}
+
+.level {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15.6px;
+  color: var(--color-ink-60);
+  white-space: nowrap;
+}
+
+/* Кнопка приглашения прижата ко дну карточки */
+.invite {
+  position: absolute;
+  left: 16px;
+  top: 632px;
+  width: 344px;
+  height: 48px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f7f7 100%);
+  box-shadow:
+    0 1px 2px 0 rgba(40, 40, 40, 0.08),
+    0 0 0 1px rgba(236, 236, 236, 1),
+    inset 0 0 2px 0 rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  /* opacity 0.6 в макете относится к тексту, не к кнопке */
+  color: rgba(16, 16, 18, 0.6);
+}

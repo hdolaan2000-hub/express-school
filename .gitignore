@@ -1,0 +1,12 @@
+node_modules
+dist
+.wrangler
+*.local
+.DS_Store
+
+# Локальные артефакты, не нужные в репозитории
+reference
+share
+*.zip
+tsconfig.tsbuildinfo
+.claude

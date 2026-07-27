@@ -1,0 +1,100 @@
+.viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.stage {
+  position: relative;
+  transform-origin: top left;
+  background: var(--color-white);
+}
+
+/* Блок контента: фиксированная ширина 1158, центрируется в пространстве
+   справа от сайдбара. left задаётся из JS по ширине сцены. */
+.content {
+  position: absolute;
+  top: 0;
+  width: 1158px;
+  height: 100%;
+}
+
+/* Рабочая область full-bleed экранов — занимает всё справа от сайдбара */
+.workArea {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+/* Шапка: приветствие слева, иконки справа — по краям блока контента */
+.header {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.greetingTitle {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33px;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  white-space: nowrap;
+}
+
+.greetingSubtitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.greetingAccent {
+  font-weight: 600;
+  color: var(--color-brand);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Иконка 36×36; SVG-файл 40px, кружок внутри со смещением 2,1 под тень —
+   вытягиваем файл за пределы бокса, чтобы кружок лёг ровно в 36px. */
+.iconButton {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  line-height: 0;
+}
+
+.iconButton img {
+  position: absolute;
+  top: -1px;
+  left: -2px;
+}
+
+/* Вертикальный стек секций контента */
+.stack {
+  position: absolute;
+  left: 0;
+  top: 106px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

@@ -1,0 +1,52 @@
+.tile {
+  position: relative;
+  width: 100%;
+  height: 162px;
+  border-radius: 36px;
+  background: var(--color-white);
+  box-shadow: inset 0 0 0 2px var(--color-grey), var(--shadow-card);
+  overflow: hidden;
+}
+
+.iconWrap {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 14px;
+}
+
+.title {
+  position: absolute;
+  left: 20px;
+  top: 113px;
+  margin: 0;
+  width: 322px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+.badge {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 52px;
+  background: var(--color-brand);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.illustration {
+  position: absolute;
+}

@@ -1,0 +1,150 @@
+.screen {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+/* Тёплый свет вверху рабочей области — радиальная вспышка от центра-верха */
+.lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 358px;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 46% 150% at 50% -8%,
+    #ffe793 0%,
+    #ffd75f 20%,
+    rgba(255, 179, 92, 0.55) 40%,
+    rgba(255, 202, 150, 0.2) 58%,
+    rgba(255, 255, 255, 0) 76%
+  );
+}
+
+.textBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  color: #222328;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.levelUp {
+  position: relative;
+  width: 276px;
+  height: 48px;
+}
+
+.rewards {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 500px;
+  padding: 24px;
+  border-radius: 28px;
+}
+
+.reward {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.rewardIcon {
+  height: 24px;
+}
+
+.rewardValues {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.rewardValue {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.rewardLabel {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  color: rgba(22, 13, 37, 0.52);
+}
+
+.divider {
+  width: 1px;
+  height: 48px;
+  background: var(--color-grey);
+  flex: none;
+}
+
+.actions {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.secondaryBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 158px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f7f7 100%);
+  box-shadow:
+    0 1px 2px 0 rgba(40, 40, 40, 0.08),
+    0 0 0 1px rgba(236, 236, 236, 1),
+    inset 0 0 2px 0 rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: rgba(16, 16, 18, 0.6);
+}
+
+.primaryBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #ffa679;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffa071 0%, #ff742f 100%);
+  box-shadow: 0 4px 12px 0 rgba(47, 16, 1, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}

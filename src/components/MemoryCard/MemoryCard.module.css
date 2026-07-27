@@ -1,0 +1,95 @@
+/* Карточка из макета (node 145:2303) — три состояния компонента:
+   Default (рубашка), Clicked (открыта), Pair (угадана).
+   Размер задаёт сетка: в макете 224×191, в сетке 1158×796 — 223.6×191.5. */
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  /* Своя перспектива у каждой карточки: точка схода в её центре,
+     поэтому переворот выглядит одинаково в любой ячейке сетки. */
+  perspective: 800px;
+  cursor: pointer;
+}
+
+/* Открытые и угаданные карточки не реагируют на наведение:
+   глобальный button:hover увеличивает кнопку, здесь это лишнее */
+.card:disabled {
+  cursor: default;
+}
+
+.card:disabled:hover,
+.card:disabled:active {
+  transform: none;
+}
+
+.inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Переворот направо: правый край идёт на зрителя, карточка раскрывается вправо */
+.flipped {
+  transform: rotateY(-180deg);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 36px;
+  box-shadow: var(--shadow-card);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Рубашка — состояние Default */
+.back {
+  background: var(--color-white);
+  border: 2px solid var(--color-grey);
+}
+
+.backArt {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  height: 167px;
+  transform: translate(-50%, -50%);
+}
+
+/* Лицо — состояние Clicked */
+.front {
+  background: var(--color-white);
+  border: 2px solid var(--color-grey);
+  transform: rotateY(180deg);
+}
+
+/* Состояние Pair: заливка #f5f5f5, пунктирная рамка */
+.matched {
+  background: var(--color-grey);
+  border: 2px dashed #e5e5e5;
+}
+
+/* Позиция из макета: центр по горизонтали, 47.5px от внутреннего края */
+.emoji {
+  position: absolute;
+  left: 50%;
+  top: 47.5px;
+  transform: translateX(-50%);
+  font-size: 66px;
+  font-weight: 600;
+  line-height: 92.4px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inner {
+    transition-duration: 0s;
+  }
+}

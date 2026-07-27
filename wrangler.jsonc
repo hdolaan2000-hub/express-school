@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "express-school-home",
+  "compatibility_date": "2026-07-18",
+  // Раздаём только статику из прод-сборки — воркер-скрипт не нужен
+  "assets": {
+    "directory": "./dist"
+  }
+}

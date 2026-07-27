@@ -1,0 +1,138 @@
+.banner {
+  position: relative;
+  flex: 0 0 571px;
+  height: 281px;
+  border-radius: 36px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.orange {
+  background: var(--color-brand);
+}
+
+.dark {
+  background: var(--color-black);
+}
+
+.title {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+.description {
+  position: absolute;
+  left: 20px;
+  top: 64px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  opacity: 0.6;
+}
+
+.action {
+  position: absolute;
+  left: 20px;
+  top: 222px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+/* --- Декор оранжевого баннера --- */
+.orangeSquare {
+  position: absolute;
+  left: 426.93px;
+  top: 186.94px;
+  width: 155.29px;
+  height: 155.29px;
+  border-radius: 20px;
+  background: #ff9744;
+  transform: rotate(-15deg);
+}
+
+.orangeStar {
+  position: absolute;
+  left: 279px;
+  top: 166px;
+  width: 89px;
+  height: 89px;
+}
+
+.orangeBlob {
+  position: absolute;
+  left: 479px;
+  top: 38px;
+  width: 96px;
+  height: 77px;
+}
+
+.orangeChef {
+  position: absolute;
+  left: 380px;
+  top: 64px;
+  width: 167px;
+  height: 218px;
+  object-fit: cover;
+}
+
+.orangeBadge {
+  position: absolute;
+  left: 339px;
+  top: 66px;
+  width: 100px;
+  height: 68px;
+}
+
+/* --- Декор тёмного баннера --- */
+.darkBlob1 {
+  position: absolute;
+  left: 324px;
+  top: 11px;
+  width: 249px;
+  height: 290px;
+}
+
+.darkBlob2 {
+  position: absolute;
+  left: 245px;
+  top: 91px;
+  width: 217px;
+  height: 279px;
+}
+
+.darkBlob3 {
+  position: absolute;
+  left: 383px;
+  top: 141px;
+  width: 274px;
+  height: 197px;
+}
+
+.darkChef {
+  position: absolute;
+  left: 365px;
+  top: 56px;
+  width: 172px;
+  height: 225px;
+  object-fit: cover;
+}

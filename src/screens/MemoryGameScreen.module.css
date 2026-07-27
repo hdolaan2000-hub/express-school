@@ -1,0 +1,197 @@
+/* Экран мини-игры «Запоминайка» — node 145:1829.
+   Блок контента 1158px, как на остальных экранах; шапки с приветствием нет. */
+.screen {
+  width: 1158px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+
+/* --- Шапка (LessonHeader, node 145:2156) --- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 68px;
+  padding: 16px;
+  border: 2px solid var(--color-grey);
+  border-radius: 36px;
+  background: var(--color-white);
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.04);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1126px;
+  height: 36px;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 32px;
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f7f7 100%);
+  box-shadow:
+    0 1px 2px 0 rgba(40, 40, 40, 0.08),
+    0 0 0 1px rgba(236, 236, 236, 1),
+    inset 0 0 2px 0 rgba(255, 255, 255, 1);
+}
+
+/* Ширина бокса и позиция текста внутри — точные значения из макета:
+   заголовок стоит не по центру строки, а так, как его положил auto-layout. */
+.titleBox {
+  position: relative;
+  width: 287.547px;
+  height: 28px;
+}
+
+.title {
+  position: absolute;
+  left: 191.98px;
+  top: 0;
+  margin: 0;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.counters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 32px;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 116px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-white);
+}
+
+.pillMoves {
+  background: radial-gradient(100% 100% at 50% 0%, #ffb5b5 0%, #ff8787 50%, #ff5959 100%);
+  box-shadow: 0 4px 6px 0 rgba(255, 92, 92, 0.08);
+}
+
+.pillScore {
+  background: radial-gradient(
+    100% 100% at 50% 0%,
+    #ffe3b4 0%,
+    #ffc893 25%,
+    #ffac72 50%,
+    #ff9050 75%,
+    #ff742f 100%
+  );
+  box-shadow: 0 4px 6px 0 rgba(255, 161, 0, 0.08);
+}
+
+/* --- Поле (node 145:2194) --- */
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  width: 1158px;
+  height: 796px;
+  margin-top: 24px;
+}
+
+/* --- Итоговый диалог (node 145:2460 / 145:2552) --- */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(2px);
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 369px;
+  padding: 16px;
+  border: 2px solid var(--color-grey);
+  border-radius: 36px;
+  background: var(--color-white);
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.04);
+}
+
+.dialogText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.dialogTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.dialogSub {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.dialogButtons {
+  display: flex;
+  align-self: stretch;
+  gap: 12px;
+}
+
+.btnHome {
+  flex: 1;
+  height: 48px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f7f7 100%);
+  box-shadow:
+    0 1px 2px 0 rgba(40, 40, 40, 0.08),
+    0 0 0 1px rgba(236, 236, 236, 1),
+    inset 0 0 2px 0 rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-ink-60);
+}
+
+.btnRestart {
+  flex: 1;
+  height: 48px;
+  padding: 0 12px;
+  border: 1px solid #ffa679;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #ffa071 0%, #ff742f 100%);
+  box-shadow: 0 4px 12px 0 rgba(47, 16, 1, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
