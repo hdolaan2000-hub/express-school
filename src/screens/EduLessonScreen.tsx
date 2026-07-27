@@ -1,5 +1,4 @@
 import styles from './EduLessonScreen.module.css'
-import type { Tab } from '../components/Sidebar/Sidebar'
 
 export const EDU_HEIGHT = 1964
 
@@ -14,14 +13,15 @@ export function EduLessonScreen({
   onBack,
   onStartTest,
 }: {
-  onBack?: (tab: Tab) => void
+  /** Возврат на предыдущий экран (откуда пришли), а не всегда на «Мои курсы» */
+  onBack?: () => void
   onStartTest?: () => void
 }) {
   return (
     <div className={styles.screen}>
       <div className={styles.topBar}>
         <div className={styles.leftGroup}>
-          <button type="button" className={styles.backBtn} onClick={() => onBack?.('courses')}>
+          <button type="button" className={styles.backBtn} onClick={onBack}>
             <img src="assets/icon-back.svg" alt="Назад" width={40} height={40} />
           </button>
           <span className={styles.backText}>Назад</span>

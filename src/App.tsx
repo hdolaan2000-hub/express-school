@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './App.module.css'
 import { useStageScale } from './hooks/useStageScale'
 import { ScaleContext } from './ScaleContext'
@@ -34,8 +34,13 @@ type ScreenConfig = {
   subtitle?: React.ReactNode
   /** hash передаём явно: экраны с состояниями (модалки, ошибка в тесте)
       инициализируются из него, а key заставляет их пересобраться при смене.
-      nav принимает необязательный hashOverride для перехода в конкретное состояние. */
-  render: (nav: (tab: Tab, hashOverride?: string) => void, hash: string) => React.ReactNode
+      nav принимает необязательный hashOverride для перехода в конкретное состояние.
+      back — возврат на предыдущий экран (откуда пришли). */
+  render: (
+    nav: (tab: Tab, hashOverride?: string) => void,
+    hash: string,
+    back: () => void,
+  ) => React.ReactNode
 }
 
 const SCREENS: Record<Tab, ScreenConfig> = {
@@ -88,7 +93,9 @@ const SCREENS: Record<Tab, ScreenConfig> = {
   edu: {
     height: EDU_HEIGHT,
     layout: 'full',
-    render: (nav) => <EduLessonScreen onBack={nav} onStartTest={() => nav('quiz')} />,
+    render: (nav, _hash, back) => (
+      <EduLessonScreen onBack={back} onStartTest={() => nav('quiz')} />
+    ),
   },
   quiz: {
     height: QUIZ_HEIGHT,
@@ -209,6 +216,9 @@ function initialTab(): Tab {
 export default function App() {
   const [tab, setTab] = useState<Tab>(initialTab)
   const [hash, setHash] = useState(() => window.location.hash)
+  // Экран, с которого пришли — чтобы кнопка «назад» возвращала туда, а не
+  // всегда на один и тот же экран.
+  const prevTabRef = useRef<Tab>('home')
   const stage = useStageScale(STAGE_WIDTH)
 
   // Синхронизируем экран с адресом: работает кнопка «Назад» в браузере
@@ -244,6 +254,7 @@ export default function App() {
   const navigate = (next: Tab, hashOverride?: string) => {
     const nextHash = hashOverride ?? HASH[next]
     if (next === tab && !friendsEmpty && `#${nextHash}` === window.location.hash) return
+    if (next !== tab) prevTabRef.current = tab // запоминаем, откуда уходим
     setVisible(false) // фейд-аут текущего
     window.setTimeout(() => {
       setTab(next) // подменяем экран, пока он ещё прозрачный
@@ -254,6 +265,9 @@ export default function App() {
       requestAnimationFrame(() => requestAnimationFrame(() => setVisible(true)))
     }, FADE_MS)
   }
+
+  // Возврат на предыдущий экран (откуда пришли на текущий)
+  const goBack = () => navigate(prevTabRef.current)
 
   const fadeStyle = {
     opacity: visible ? 1 : 0,
@@ -281,7 +295,7 @@ export default function App() {
           {isAuth(tab) ? (
             // экраны авторизации — без сайдбара, на всю ширину
             <div className={styles.workArea} style={{ left: 0, width: stage.width, ...fadeStyle }}>
-              {screen.render(navigate, hash)}
+              {screen.render(navigate, hash, goBack)}
             </div>
           ) : (
             <>
@@ -290,7 +304,7 @@ export default function App() {
             className={styles.workArea}
             style={{ left: SIDEBAR_WIDTH, width: stage.width - SIDEBAR_WIDTH, ...fadeStyle }}
           >
-            {screen.render(navigate, hash)}
+            {screen.render(navigate, hash, goBack)}
           </div>
         ) : (
           <div
@@ -328,7 +342,7 @@ export default function App() {
               {tab === 'friends' ? (
                 <FriendsScreen key={hash} empty={friendsEmpty} />
               ) : (
-                screen.render(navigate, hash)
+                screen.render(navigate, hash, goBack)
               )}
             </div>
           </div>
