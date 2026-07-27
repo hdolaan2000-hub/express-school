@@ -1,6 +1,6 @@
 import styles from './QuestCard.module.css'
 
-export function QuestCard() {
+export function QuestCard({ onStart }: { onStart?: () => void }) {
   return (
     <section className={styles.card}>
       <img className={styles.icon} src="assets/quest-icon.svg" alt="" width={26} height={26} />
@@ -22,7 +22,7 @@ export function QuestCard() {
             <span>200 XP</span>
           </span>
         </div>
-        <button type="button" className={styles.startButton}>
+        <button type="button" className={styles.startButton} onClick={onStart}>
           Начать занятие!
         </button>
       </div>

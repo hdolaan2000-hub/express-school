@@ -55,18 +55,21 @@ const CONTENT_CARDS = [
 
 export function HomeScreen({
   onOpenFriends,
+  onInviteFriend,
   onOpenGame,
   onOpenLessons,
   onOpenChallenge,
   onStartLesson,
 }: {
   onOpenFriends?: () => void
+  /** «Пригласить друга!» → экран друзей с открытой модалкой приглашения */
+  onInviteFriend?: () => void
   onOpenGame?: () => void
   /** «Новые уроки» → Мои курсы */
   onOpenLessons?: () => void
   /** «Челлендж» → экран теста */
   onOpenChallenge?: () => void
-  /** «Начать занятие!» в карточке прогресса → экран теста */
+  /** «Начать занятие!» в карточке прогресса и в квесте → экран теста */
   onStartLesson?: () => void
 }) {
   return (
@@ -105,8 +108,8 @@ export function HomeScreen({
       <hr className={styles.divider} />
 
       <div className={styles.questRow}>
-        <QuestCard />
-        <FriendsCard />
+        <QuestCard onStart={onStartLesson} />
+        <FriendsCard onInvite={onInviteFriend} />
       </div>
 
       <hr className={styles.divider} />

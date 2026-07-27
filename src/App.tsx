@@ -33,8 +33,9 @@ type ScreenConfig = {
   title?: string
   subtitle?: React.ReactNode
   /** hash передаём явно: экраны с состояниями (модалки, ошибка в тесте)
-      инициализируются из него, а key заставляет их пересобраться при смене */
-  render: (nav: (tab: Tab) => void, hash: string) => React.ReactNode
+      инициализируются из него, а key заставляет их пересобраться при смене.
+      nav принимает необязательный hashOverride для перехода в конкретное состояние. */
+  render: (nav: (tab: Tab, hashOverride?: string) => void, hash: string) => React.ReactNode
 }
 
 const SCREENS: Record<Tab, ScreenConfig> = {
@@ -50,6 +51,7 @@ const SCREENS: Record<Tab, ScreenConfig> = {
     render: (nav) => (
       <HomeScreen
         onOpenFriends={() => nav('friends')}
+        onInviteFriend={() => nav('friends', 'friends-invite')}
         onOpenGame={() => nav('game')}
         onOpenLessons={() => nav('courses')}
         onOpenChallenge={() => nav('quiz')}
@@ -237,12 +239,15 @@ export default function App() {
   const [visible, setVisible] = useState(true)
   const FADE_MS = 150
 
-  const navigate = (next: Tab) => {
-    if (next === tab && !friendsEmpty) return
+  // hashOverride — для переходов в конкретное состояние экрана (например,
+  // друзья сразу с открытой модалкой приглашения: '#friends-invite').
+  const navigate = (next: Tab, hashOverride?: string) => {
+    const nextHash = hashOverride ?? HASH[next]
+    if (next === tab && !friendsEmpty && `#${nextHash}` === window.location.hash) return
     setVisible(false) // фейд-аут текущего
     window.setTimeout(() => {
       setTab(next) // подменяем экран, пока он ещё прозрачный
-      window.location.hash = HASH[next]
+      window.location.hash = nextHash
       setHash(window.location.hash)
       window.scrollTo(0, 0)
       // включаем видимость на следующем кадре, чтобы сработал фейд-ин из 0 в 1

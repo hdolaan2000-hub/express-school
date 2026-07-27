@@ -15,7 +15,7 @@ const FRIENDS: Friend[] = [
   { rank: '5.', name: 'Лиза', level: 'Уровень 4' },
 ]
 
-export function FriendsCard() {
+export function FriendsCard({ onInvite }: { onInvite?: () => void }) {
   return (
     <section className={styles.card}>
       <h2 className={styles.title}>Твои друзья</h2>
@@ -41,7 +41,7 @@ export function FriendsCard() {
         ))}
       </div>
 
-      <button type="button" className={styles.invite}>
+      <button type="button" className={styles.invite} onClick={onInvite}>
         Пригласить друга!
       </button>
     </section>
