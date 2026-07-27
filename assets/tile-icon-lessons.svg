@@ -1,0 +1,13 @@
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="44" height="44" rx="12" fill="url(#paint0_radial_3_25)"/>
+<rect x="0.5" y="0.5" width="43" height="43" rx="11.5" stroke="white" stroke-opacity="0.16"/>
+<path d="M34.4329 20.1375C34.6692 20.0333 34.8697 19.862 35.0096 19.6449C35.1496 19.4278 35.2227 19.1744 35.22 18.9162C35.2174 18.6579 35.139 18.4061 34.9946 18.1919C34.8502 17.9778 34.6462 17.8107 34.4078 17.7114L23.0941 12.5581C22.7502 12.4012 22.3765 12.32 21.9985 12.32C21.6205 12.32 21.2468 12.4012 20.9029 12.5581L9.59049 17.7061C9.35549 17.809 9.15557 17.9782 9.01519 18.1929C8.87481 18.4077 8.80005 18.6586 8.80005 18.9152C8.80005 19.1718 8.87481 19.4227 9.01519 19.6375C9.15557 19.8522 9.35549 20.0214 9.59049 20.1243L20.9029 25.2829C21.2468 25.4398 21.6205 25.521 21.9985 25.521C22.3765 25.521 22.7502 25.4398 23.0941 25.2829L34.4329 20.1375Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M35.1985 18.9205V26.8405" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.0784 22.2205V26.8405C14.0784 27.8907 14.9128 28.898 16.3981 29.6406C17.8834 30.3832 19.8979 30.8005 21.9984 30.8005C24.0989 30.8005 26.1134 30.3832 27.5987 29.6406C29.0839 28.898 29.9184 27.8907 29.9184 26.8405V22.2205" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<radialGradient id="paint0_radial_3_25" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(22) rotate(90) scale(44)">
+<stop stop-color="#BDD6FF"/>
+<stop offset="1" stop-color="#3E87FF"/>
+</radialGradient>
+</defs>
+</svg>
